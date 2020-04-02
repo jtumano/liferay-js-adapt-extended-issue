@@ -3,6 +3,13 @@ import App from "./App.vue";
 
 Vue.config.productionTip = false;
 
-new Vue({
-  render: h => h(App)
-}).$mount("#app");
+export default function main({
+	contextPach,
+	config,
+	portletElementId,
+	portletNamespace
+}: any) {
+	new Vue({
+		render: h => h(App)
+	}).$mount(`#${portletElementId}`);
+}

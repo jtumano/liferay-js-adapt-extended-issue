@@ -6,7 +6,9 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "test:unit": "vue-cli-service test:unit",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "build:liferay": "lnbs-build",
+    "deploy:liferay": "yarn run build:liferay && lnbs-deploy"
   },
   "dependencies": {
     "core-js": "^3.6.4",
@@ -31,6 +33,16 @@
     "eslint-plugin-vue": "^6.1.2",
     "prettier": "^1.19.1",
     "typescript": "~3.7.5",
-    "vue-template-compiler": "^2.6.11"
+    "vue-template-compiler": "^2.6.11",
+    "liferay-npm-build-support": "^2.18.3",
+    "liferay-npm-bundler": "^2.18.3",
+    "liferay-npm-bundler-preset-vue-cli": "^2.18.3"
+  },
+  "portlet": {
+    "com.liferay.portlet.display-category": "category.sample",
+    "javax.portlet.name": "tst",
+    "javax.portlet.security-role-ref": "power-user,user",
+    "javax.portlet.resource-bundle": "content.Language",
+    "com.liferay.portlet.instanceable": true
   }
 }
